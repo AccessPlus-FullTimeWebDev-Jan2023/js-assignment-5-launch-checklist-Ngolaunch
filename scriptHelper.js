@@ -22,12 +22,18 @@ function validateInput(testInput) {
    if(testInput === null) {return "Empty"}
    if(testInput === undefined) {return "Empty"}
    if(testInput.trim() === ""){return "Empty"}
-   if(parseInt(testInput) === NaN){return "Not a Number";}
-   if(parseInt(testInput) !== NaN){return "Is a Number"}
+   if(isNaN(testInput)=== true){return "Not a Number"}
+   if(isNaN(testInput)=== false){return "Is a Number"}
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+   document.getElementById("pilotStatus").value = `Pilot ${pilot} is ready for launch`
+   document.getElementById("copilotStatus").value = `copilot ${copilot} is ready for launch`
+   if(fuelLevel<10000){
+    document.getElementById("faultyItems").style.visibility= "visible"
+    document.getElementById("fuelStatus").value = "Fuel level too low for launch"
+   }
+
 }
 
 async function myFetch() {
