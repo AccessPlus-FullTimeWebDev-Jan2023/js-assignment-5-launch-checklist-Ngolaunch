@@ -32,7 +32,11 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    if(fuelLevel<10000){
     document.getElementById("faultyItems").style.visibility= "visible"
     document.getElementById("fuelStatus").value = "Fuel level too low for launch"
-   }
+    document.getElementById("launchStatus").value = "Shuttle not ready for launch"
+    document.getElementById("launchStatus").style.color= "red"
+}
+
+
 
 }
 
