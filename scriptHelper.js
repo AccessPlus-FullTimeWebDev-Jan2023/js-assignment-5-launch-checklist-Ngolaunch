@@ -47,6 +47,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     else {
     document.getElementById("launchStatus").value= "Shuttle is Ready for Launch"
     document.getElementById("launchStatus").style.color= "green"
+    
     }
 
 
