@@ -29,12 +29,26 @@ function validateInput(testInput) {
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    document.getElementById("pilotStatus").value = `Pilot ${pilot} is ready for launch`
    document.getElementById("copilotStatus").value = `copilot ${copilot} is ready for launch`
-   if(fuelLevel<10000){
+   
+   if(fuelLevel < 10000){
     document.getElementById("faultyItems").style.visibility= "visible"
     document.getElementById("fuelStatus").value = "Fuel level too low for launch"
     document.getElementById("launchStatus").value = "Shuttle not ready for launch"
     document.getElementById("launchStatus").style.color= "red"
-}
+    }
+
+    if(cargoLevel > 10000){
+     document.getElementById("faultyItems").style.visibility= "visible"
+     document.getElementById("cargoStatus").value ="Cargo mass too heavy for launch"   
+     document.getElementById("launchStatus").value = "Shuttle not ready for launch"   
+     document.getElementById("launchStatus").style.color= "red"   
+    }
+
+    else {
+    document.getElementById("launchStatus").value= "Shuttle is Ready for Launch"
+    document.getElementById("launchStatus").style.color= "green"
+    }
+
 
 
 
