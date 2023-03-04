@@ -2,13 +2,14 @@
 
 // const { formSubmission } = require("./scriptHelper");
 
-//const { myFetch, pickPlanet } = require("./scriptHelper");
+// const { myFetch } = require("./scriptHelper");
 
 
 
 window.addEventListener("load", function() {
 
-    let launchform = document.getElementById("launchForm")
+    let launchform = document.getElementById("launchForm");
+    document.getElementById("faultyItems").style.visibility = 'hidden';
 
     launchform.addEventListener("submit", function(event){
         event.preventDefault();
