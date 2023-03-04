@@ -29,28 +29,35 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   document.getElementById("pilotStatus").value = `Pilot ${pilot} is ready for launch`
-   document.getElementById("copilotStatus").value = `copilot ${copilot} is ready for launch`
-   
+   document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`
+   document.getElementById("copilotStatus").innerHTML = `copilot ${copilot} is ready for launch`
+   document.getElementById("cargoStatus").innerHTML ="Cargo mass low enough for launch"   
+   document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch"
+
+   //checking fuel level high enough
    if(fuelLevel < 10000){
     document.getElementById("faultyItems").style.visibility= "visible"
-    document.getElementById("fuelStatus").value = "Fuel level too low for launch"
-    document.getElementById("launchStatus").value = "Shuttle not ready for launch"
+    document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch"
+    document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"
     document.getElementById("launchStatus").style.color= "red"
     }
-
+    
+    //cargolevel low enough
     if(cargoLevel > 10000){
      document.getElementById("faultyItems").style.visibility= "visible"
-     document.getElementById("cargoStatus").value ="Cargo mass too heavy for launch"   
-     document.getElementById("launchStatus").value = "Shuttle not ready for launch"   
+     document.getElementById("cargoStatus").innerHTML ="Cargo mass too heavy for launch"   
+     document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"   
      document.getElementById("launchStatus").style.color= "red"   
     }
 
-    else {
-    document.getElementById("launchStatus").value= "Shuttle is Ready for Launch"
+    //both conditions are met
+    if(fuelLevel >= 10000 && cargoLevel <= 10000){
+    document.getElementById("launchStatus").innerHTML= "Shuttle is Ready for Launch"
     document.getElementById("launchStatus").style.color= "green"
+    document.getElementById("faultyItems").style.visibility= "visible"
     
-    }
+    };
+
 
 
 }
