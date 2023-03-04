@@ -30,7 +30,7 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    document.getElementById("pilotStatus").innerHTML = `Pilot ${pilot} is ready for launch`
-   document.getElementById("copilotStatus").innerHTML = `copilot ${copilot} is ready for launch`
+   document.getElementById("copilotStatus").innerHTML = `Co-pilot ${copilot} is ready for launch`
    document.getElementById("cargoStatus").innerHTML ="Cargo mass low enough for launch"   
    document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch"
 
@@ -38,7 +38,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    if(parseInt(fuelLevel) < 10000){
     list.style.visibility= "visible"
     document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch"
-    document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"
+    document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch"
     document.getElementById("launchStatus").style.color= "rgb(199, 37, 78)"
     }
     
@@ -46,14 +46,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if(parseInt(cargoLevel) > 10000){
      list.style.visibility= "visible"
      document.getElementById("cargoStatus").innerHTML ="Cargo mass too heavy for launch"   
-     document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"   
+     document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch"   
      document.getElementById("launchStatus").style.color= "rgb(199, 37, 78)"   
     }
 
     //both conditions are met
     if(parseInt(fuelLevel) >= 10000 && parseInt(cargoLevel) <= 10000){
     document.getElementById("launchStatus").innerHTML= "Shuttle is Ready for Launch"
-    document.getElementById("launchStatus").style.color= "green"
+    document.getElementById("launchStatus").style.color= "rgb(65, 159, 106)"
     list.style.visibility= "visible"
     
     };
