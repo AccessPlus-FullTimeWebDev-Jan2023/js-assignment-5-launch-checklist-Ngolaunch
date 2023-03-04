@@ -39,7 +39,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     document.getElementById("faultyItems").style.visibility= "visible"
     document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch"
     document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"
-    document.getElementById("launchStatus").style.color= "red"
+    document.getElementById("launchStatus").style.color= "rgb(199, 37, 78)"
     }
     
     //cargolevel low enough
@@ -47,7 +47,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
      document.getElementById("faultyItems").style.visibility= "visible"
      document.getElementById("cargoStatus").innerHTML ="Cargo mass too heavy for launch"   
      document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"   
-     document.getElementById("launchStatus").style.color= "red"   
+     document.getElementById("launchStatus").style.color= "rgb(199, 37, 78)"   
     }
 
     //both conditions are met
