@@ -1,5 +1,5 @@
 // Write your helper functions here!
-var fetch = require('isomorphic-fetch');
+let lib = require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
     document.getElementById("missionTarget").innerHTML = 
