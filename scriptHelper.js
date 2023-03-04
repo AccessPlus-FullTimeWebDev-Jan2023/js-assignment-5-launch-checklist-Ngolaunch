@@ -35,7 +35,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    document.getElementById("fuelStatus").innerHTML = "Fuel level high enough for launch"
 
    //checking fuel level high enough
-   if(fuelLevel < 10000){
+   if(parseInt(fuelLevel) < 10000){
     document.getElementById("faultyItems").style.visibility= "visible"
     document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch"
     document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"
@@ -43,7 +43,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
     
     //cargolevel low enough
-    if(cargoLevel > 10000){
+    if(parseInt(cargoLevel) > 10000){
      document.getElementById("faultyItems").style.visibility= "visible"
      document.getElementById("cargoStatus").innerHTML ="Cargo mass too heavy for launch"   
      document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"   
@@ -51,7 +51,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
 
     //both conditions are met
-    if(fuelLevel >= 10000 && cargoLevel <= 10000){
+    if(parseInt(fuelLevel) >= 10000 && parseInt(cargoLevel) <= 10000){
     document.getElementById("launchStatus").innerHTML= "Shuttle is Ready for Launch"
     document.getElementById("launchStatus").style.color= "green"
     document.getElementById("faultyItems").style.visibility= "visible"
