@@ -36,7 +36,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
    //checking fuel level high enough
    if(parseInt(fuelLevel) < 10000){
-    document.getElementById("faultyItems").style.visibility= "visible"
+    list.style.visibility= "visible"
     document.getElementById("fuelStatus").innerHTML = "Fuel level too low for launch"
     document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"
     document.getElementById("launchStatus").style.color= "rgb(199, 37, 78)"
@@ -44,7 +44,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     
     //cargolevel low enough
     if(parseInt(cargoLevel) > 10000){
-     document.getElementById("faultyItems").style.visibility= "visible"
+     list.style.visibility= "visible"
      document.getElementById("cargoStatus").innerHTML ="Cargo mass too heavy for launch"   
      document.getElementById("launchStatus").innerHTML = "Shuttle not ready for launch"   
      document.getElementById("launchStatus").style.color= "rgb(199, 37, 78)"   
@@ -54,7 +54,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if(parseInt(fuelLevel) >= 10000 && parseInt(cargoLevel) <= 10000){
     document.getElementById("launchStatus").innerHTML= "Shuttle is Ready for Launch"
     document.getElementById("launchStatus").style.color= "green"
-    document.getElementById("faultyItems").style.visibility= "visible"
+    list.style.visibility= "visible"
     
     };
 
